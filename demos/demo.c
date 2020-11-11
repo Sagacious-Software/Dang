@@ -7,7 +7,9 @@ int main (int argc, char **argv) {
 
     backend_t *backend;
     window_t *window;
-    element_t *element;
+
+    /* the root element */
+    container_element_t *root;
 
     /* create the root gui element */
     element = (element_t *) create_dummy_element (make_color_rgb (1, 0.8, 0.3));

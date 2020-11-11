@@ -1,5 +1,5 @@
-#ifndef DUMMY_ELEMENT_H
-#define DUMMY_ELEMENT_H
+#ifndef DUMMY_H
+#define DUMMY_H
 
 #include <kit/color.h>
 
@@ -16,4 +16,4 @@ typedef struct dummy_element_t {
 /* dummy element constructor */
 dummy_element_t *create_dummy_element (color_t color);
 
-#endif /* DUMMY_ELEMENT_H */
+#endif /* DUMMY_H */

@@ -8,11 +8,11 @@
 
 struct element_t;
 
-typedef void      destroy_element_method_t (struct element_t *element);
-typedef window_t *present_element_method_t (struct element_t *element,
-                                            backend_t *backend,
-                                            region_t region,
-                                            char *title);
+typedef void destroy_element_method_t (struct element_t *element);
+typedef void draw_element_method_t    (struct element_t *element,
+                                       image_t image,
+                                       region_t element_region,
+                                       region_t draw_region);
 
 /* gui element */
 typedef struct element_t {
@@ -21,7 +21,7 @@ typedef struct element_t {
 
     /* abstract methods */
     destroy_element_method_t *destroy_element_method;
-    present_element_method_t *present_element_method;
+    draw_element_method_t    *draw_element_method;
 
 } element_t;
 
@@ -33,8 +33,5 @@ window_t *present_element (element_t *element,
                            backend_t *backend,
                            region_t region,
                            char *title);
-
-/* window event handle */
-void element_window_callback (window_t *window, event_t event, void *data);
 
 #endif /* ELEMENT_H */
